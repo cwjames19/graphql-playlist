@@ -2,11 +2,12 @@ const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 
-// connect to mlab database
-// make sure to replace my db string & creds with your own
+// allow cross-origin requests
+app.use(cors());
 
 mongoose.connect(
   "mongodb://cwjames19:olop1919@ds111422.mlab.com:11422/graphql-playlist",
